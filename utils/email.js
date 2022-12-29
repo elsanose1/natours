@@ -12,8 +12,6 @@ module.exports = class Email {
 
   newTransport(){
     if (process.env.NODE_ENV ==='production') {
-      console.log('hello');
-
       // return nodemailer.createTransport({
       //   service : 'SendGrid',
       //   auth: {
