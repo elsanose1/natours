@@ -54,7 +54,7 @@ exports.signup = catchAsync(async (req ,res ,next)=>{
         confirmPassword : req.body.confirmPassword
     })
     const url = `${req.protocol}://${req.get('host')}/me`;
-    await new Email(newUser , url).sendWelcome()
+    // await new Email(newUser , url).sendWelcome()
 
     const token = signToken(newUser._id)
     createSendToken(newUser , 201, res)
@@ -190,7 +190,7 @@ exports.forgotPassword = catchAsync( async (req, res, next)=>{
         //     subject : "Reset Your Password (valid for 10 mins)",
         //     message
         // })
-        await new Email(user,resetURL).sendPasswordReset()
+        // await new Email(user,resetURL).sendPasswordReset()
     
         res.status(200).json({
             status : 'success',

@@ -92,6 +92,7 @@ userShema.methods.createPasswordResetToken =  function () {
 
     // set expires date
     this.PasswordResetExpires = Date.now() + 10 * 60 * 1000
+    console.log(resetPassword);
 
     return resetPassword;
 }
