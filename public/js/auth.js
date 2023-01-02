@@ -68,4 +68,18 @@ export const logout = async ()=>{
     }
 }
 
+export const resetPassword = async (email)=>{
+    try {
+        const res = await axios.post('/api/v1/users/forgotpassword',{email});
+        
+        showAlert('success' , res.data.message)
+
+    } catch (error) {
+        console.log(error);
+        showAlert('error' , "There's no user with this email")
+
+    }
+
+}
+
 

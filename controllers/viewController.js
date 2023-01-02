@@ -72,3 +72,13 @@ exports.getMyTours = catchAsync( async(req ,res ,next) =>{
         tours
     })
 })
+
+exports.getForgotPasswordForm = catchAsync( async(req ,res ,next)=>{
+    if (res.locals.user) {
+        return res.redirect('/');
+    }
+
+    res.status(200).render('forgotPassword',{
+        title : 'Reset Password',
+    })
+})

@@ -12,6 +12,7 @@ router.get('/my-tours' , viewController.getMyTours)
 router.get('/tour/:slug' , viewController.getTour)
 router.get('/login' , viewController.getloginForm)
 router.get('/register' , viewController.getRegisterForm)
+router.get('/forgotpassword' , viewController.getForgotPasswordForm)
 
 
 module.exports = router

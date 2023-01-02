@@ -1,4 +1,4 @@
-import { login , logout, register } from "./auth";
+import { login , logout, register, resetPassword } from "./auth";
 import { updateSettings } from "./account";
 import { displayMap } from "./mapBox";
 import { bookTour } from "./stripe";
@@ -11,6 +11,7 @@ const settingForm = document.querySelector('#settingForm')
 const passwordForm = document.querySelector('#passwordForm')
 const logoutBtn = document.querySelector('.nav__el--logout')
 const bookTourBtn = document.querySelector('#bookTour')
+const resetPasswrodBtn = document.querySelector('#resetPasswrodBtn')
 
 // VALUES
 
@@ -61,7 +62,7 @@ if (registerForm) {
     })
 }
 
-// data form
+// update data form
 if (settingForm) {
     settingForm.addEventListener('submit', async (e)=>{
         e.preventDefault();
@@ -99,6 +100,14 @@ if (passwordForm){
 // logout
 if(logoutBtn){
     logoutBtn.addEventListener('click' , logout)
+}
+
+// Reset Password Form
+if(resetPasswrodBtn){
+    const email = document.getElementById('email')
+    resetPasswrodBtn.addEventListener('click' , (e)=>{
+    resetPassword(email.value)
+    })
 }
 
 // book tour 
